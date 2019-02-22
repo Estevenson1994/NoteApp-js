@@ -3,5 +3,5 @@
   var listDouble = "list double";
   var controller = new NoteController(listDouble);
 
-  assert.isEqual(controller.__proto__.constructor.name == methodName);
+  assert.isEqual(controller.__proto__.constructor.name === methodName);
 })();

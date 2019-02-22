@@ -10,7 +10,7 @@ NoteListView.prototype.addNote = function(note) {
 };
 
 NoteListView.prototype.getNoteList = function() {
-  return this._noteList.notes;
+  return this._noteList._notes;
 };
 
 NoteListView.prototype.getHtml = function() {
