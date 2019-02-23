@@ -12,5 +12,5 @@
 
 (function testNoteId1() {
   let note1 = new Note("note 1");
-  assert.isEqual(note.showId() === 0);
+  assert.isEqual(note1.showId() === 0);
 })();
