@@ -7,10 +7,6 @@
     this._noteList.createNote(note);
   };
 
-  NoteController.prototype.createNoteListView = function(view) {
-    this._noteListView = new view(this._noteList);
-  };
-
   NoteController.prototype.listNotes = function() {
     document.getElementById("app").innerHTML = this._noteListView.getHtml();
   };
