@@ -3,6 +3,7 @@
   function Note(text) {
     this._text = text;
     this._id = idCounter;
+    idCounter++;
   }
 
   Note.prototype.returnNoteText = function() {
