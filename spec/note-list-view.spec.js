@@ -38,13 +38,15 @@
   );
 })();
 
-(function testFirstTwentyCharactersView() {
+(function testFirstTwentyCharactersViewHref() {
   function NoteListDouble() {
     this.notes = [];
   }
-
+  var idCounter = 0;
   function NoteDouble(text) {
     this.text = text;
+    this.id = idCounter;
+    idCounter++;
   }
 
   NoteListDouble.prototype = {
@@ -59,6 +61,9 @@
   NoteDouble.prototype = {
     returnNoteText: function() {
       return this.text;
+    },
+    showId: function() {
+      return this.id;
     }
   };
 
@@ -72,6 +77,6 @@
 
   assert.isEqual(
     noteListView.getFirstTwentyCharsHTML() ===
-      "<ul><li><div>first note: This is </div></li><li><div>second note: This is</div></li></ul>"
+      "<ul><li><div><a href='#0'>first note: This is </div></li><li><div><a href='#1'>second note: This is</div></li></ul>"
   );
 })();
