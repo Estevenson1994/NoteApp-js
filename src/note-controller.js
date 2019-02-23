@@ -1,5 +1,5 @@
 (function(exports) {
-  function NoteController(noteList) {
+  function NoteController(noteList = new NoteList()) {
     this._noteList = noteList;
     this._noteListView = new NoteListView(this._noteList);
   }
@@ -14,6 +14,7 @@
   };
 
   makeUrlChangeShowNoteForCurrentPage();
+  listenForSubmit();
 
   function makeUrlChangeShowNoteForCurrentPage() {
     window.addEventListener("hashchange", showNoteForCurrentPage);
@@ -39,14 +40,15 @@
       }
     });
     return thisNote;
-
-    function listForSubmit() {
-      document
-        .getElementById("text")
-        .addEventListener("submit", function(event) {
-          event.preventDefault();
-        });
-    }
   }
+  function listenForSubmit() {
+    document.getElementById("text").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var note = new Note(event.path[0][0].value);
+      controller.addNote(note);
+      controller.listNotes();
+    });
+  }
+
   exports.NoteController = NoteController;
 })(this);
