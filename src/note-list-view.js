@@ -18,16 +18,16 @@
     });
     return "<ul>" + html.join("") + "</ul>";
   };
-  NoteListView.prototype.get20Chars = function() {
-    let twentyChars = this.getNoteList().map(note => {
-      return note.returnNoteText().substring(0, 20);
-    });
-    return twentyChars;
-  };
 
   NoteListView.prototype.getFirstTwentyCharsHTML = function() {
-    let html = this.get20Chars().map(note => {
-      return "<li><div>" + note + "</div></li>";
+    let html = this.getNoteList().map(note => {
+      return (
+        "<li><div><a href='#" +
+        note.showId() +
+        "'>" +
+        note.returnNoteText().substring(0, 20) +
+        "</div></li>"
+      );
     });
     return "<ul>" + html.join("") + "</ul>";
   };
