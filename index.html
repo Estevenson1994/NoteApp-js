@@ -10,6 +10,16 @@
     <script src="src/single-note-view.js"></script>
   </head>
   <body>
+    <textarea
+      rows="5"
+      cols="60"
+      name="newNotetext"
+      form="text"
+      placeholder="Enter new note here"
+    ></textarea>
+    <form id="text" action="#createNote" method="post">
+      <input type="submit" value="create note" />
+    </form>
     <div id="view">hello</div>
     <div id="app">hello</div>
   </body>
