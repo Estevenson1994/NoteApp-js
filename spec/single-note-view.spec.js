@@ -1,7 +1,5 @@
 (function testSingleNoteViewInstantiation() {
   let methodName = "SingleNoteView";
-  let singleNoteView = new singleNoteView();
-  AssertionError.isEqual(
-    singleNoteView.__proto__.constructor.name === methodName
-  );
+  let singleNoteView = new SingleNoteView();
+  assert.isEqual(singleNoteView.__proto__.constructor.name === methodName);
 })();

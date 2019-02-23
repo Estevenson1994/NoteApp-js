@@ -16,6 +16,9 @@
   NoteListDouble.prototype = {
     createNote: function(note) {
       this.notes.push(note);
+    },
+    returnNoteList: function() {
+      return this.notes;
     }
   };
 
