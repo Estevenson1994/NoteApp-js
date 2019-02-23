@@ -39,6 +39,14 @@
       }
     });
     return thisNote;
+
+    function listForSubmit() {
+      document
+        .getElementById("text")
+        .addEventListener("submit", function(event) {
+          event.preventDefault();
+        });
+    }
   }
   exports.NoteController = NoteController;
 })(this);
