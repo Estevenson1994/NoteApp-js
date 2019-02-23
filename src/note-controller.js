@@ -8,7 +8,9 @@
   };
 
   NoteController.prototype.listNotes = function() {
-    document.getElementById("app").innerHTML = this._noteListView.getHtml();
+    document.getElementById(
+      "app"
+    ).innerHTML = this._noteListView.getFirstTwentyCharsHTML();
   };
 
   exports.NoteController = NoteController;
